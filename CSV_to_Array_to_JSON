@@ -1,0 +1,31 @@
+import csv
+import os
+import json
+
+# to change the Cuurent directory
+os.chdir("C:\\Users\\Z0041HFV\\Desktop\\New folder")
+
+# CSV file name stored on desktop
+csvFilePath = "artists_songs_data.csv"
+
+# JSON file To be created
+jsonFilePath = "File1.json"
+
+
+# arr to store the data read from csv
+arr = []
+
+# reading data from the CSV file
+with open(csvFilePath) as csvFile:
+    csvReader = csv.DictReader(csvFile)
+
+    for csvRow in csvReader:
+        if csvRow == "":    # to check if the row is empty
+            continue
+        else:
+            arr.append(csvRow)  # Adding the read data to array
+
+
+# opening the json file in write mode 
+with open(jsonFilePath, "w") as jsonFile:
+    jsonFile.write(json.dumps(arr, indent=4))  # writing the data to json file
