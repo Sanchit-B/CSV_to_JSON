@@ -2,7 +2,7 @@ import csv
 import os
 import json
 
-# to change the Cuurent directory
+# to change the Current directory
 os.chdir("C:\\Users\\Z0041HFV\\Desktop\\New folder")
 
 # CSV file name stored on desktop
